@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;700&family=Passion+One:wght@400;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+:root{ /*Essa Configuração cria uma variavel para representar as fontes determinadas*/
+       /*a variavel fonte1 vai representar a fonte Verdana....*/
+       /*para selecionar a fonte >> font-family : var(--fonte1);*/
+    --fonte1 : Verdana, Geneva, Tahoma,sans-serif;
+    --fonte2 : 'Passion One', cursive;
+    --fonte3 : 'Sriracha', cursive;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html body{
+    min-height: 100%vh; /*devemos determinar um tamanho mínimo para o site*/
+    background-color: darkgray;
+    font-family: var(--fonte1);/*Variavel para representar a fonte criada no comando :root*/
+}
+
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+h1{
+    padding-top: 50px;
+    font-variant: small-caps; /*Coloca as Letras em Maiuscula dando um destaque para as iniciais*/
+    font-family: var(--fonte2);/*Variavel para representar a fonte criada no comando :root*/
+    font-size: 10vw;
+}
+
+header p{
+    padding-bottom: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+section{ /*Devemos criar esse estilo para todas as section em vh para ser responsivo*/
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;/*Aumenta o espaço entre as linhaw*/
+    padding-left: 30px;
+    font-family: var(--fonte3);
+    font-size: 3.5vw;/*vw - é o tamanho em relação ao width da página*/
+}
+
+section > p {
+    padding-bottom: 2em;
+}
+
+.normal{ /*Devemos criar um estilo para cada section qeu serao alternadas*/
+    background-color: white;
+    color: black;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.477); /*Sombramento entre as imagens para o efeito parralax*/
+    background-attachment: fixed; /*Deixa a imagem FIXA, dando o efeito parralax*/
+}
+
+.imagem{ /*Devemos criar um estilo para cada section qeu serao alternadas*/
+    background-color: rgb(87, 83, 83);
+    color: white;
+    box-shadow: inset 10px 10px 20px 0px rgba(0, 0, 0, 0.477); /*Sombramento entre as imagens para o efeito parralax*/
+    background-attachment: fixed; /*Deixa a imagem FIXA, dando o efeito parralax*/
+}
+
+section.imagem > p{ /*Cria um estilo para os paragrafos ( p ) que estiverem somente nessa classe*/
+    display: inline-block;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.516);
+    text-shadow: 1px 1px 0px black;/*um leve sombreamento no texto dessa classe*/
+}
+
+section#img01{ /*Adiciona uma determinada imagem na classe com id img01 para o efeito parralax*/
+    background-image: url('../imagens/background001.jpg');
+    background-position: right center; /*posiciona a imagem mais a direita e centralizada*/
+    background-size: cover;
+}
+
+section#img02{/*Adiciona uma determinada imagem na classe com id img02 para o efeito parralax*/
+    background-image: url('../imagens/background002.jpg');
+    background-size: cover;
+}
+
+section#img03{
+    background-image: url('../imagens/pattern002.png');
+    background-size: cover;
+}
+
+section#img04{
+    background-image: url('../imagens/pattern003.png');
+    background-size: cover;
+}
+
+footer{
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
